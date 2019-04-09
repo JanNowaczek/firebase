@@ -16,7 +16,10 @@ class Create extends Component {
     }
 
     handleSubmit = (event) => {
-        console.log(this.state)
+        fetch('https://jfddl7-api-b832f.firebaseio.com/', {
+            method: 'POST',
+            body: JSON.stringyfy(this.state)
+        })
         event.preventDefault()
     }
 
