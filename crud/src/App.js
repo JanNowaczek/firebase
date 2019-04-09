@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Menu from './components/Menu'
 import List from './components/List'
+import Create from './components/Create'
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <Menu />
         <Route exact path="/" component={List} />
+        <Route exact path="/" component={Create} />
       </BrowserRouter>
     );
   }
