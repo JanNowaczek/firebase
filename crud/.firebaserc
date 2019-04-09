@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "jfddl7-api-f4680"
+  }
+}
