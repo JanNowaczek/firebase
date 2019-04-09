@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Menu from './components/Menu'
 import List from './components/List'
 import Create from './components/Create'
+import Read from './components/Read'
 
 
 class App extends Component {
@@ -12,7 +13,8 @@ class App extends Component {
       <BrowserRouter>
         <Menu />
         <Route exact path="/" component={List} />
-        <Route exact path="/" component={Create} />
+        <Route exact path="/create" component={Create} />
+        <Route exact path="/read/:id" component={Read} />
       </BrowserRouter>
     );
   }
