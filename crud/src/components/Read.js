@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Read extends Component {
 
@@ -9,7 +9,7 @@ class Read extends Component {
         fetch(`https://jfddl7-api-b832f.firebaseio.com/cats/${id}.json`)
             .then(response => response.json())
             .then(data => {
-                this.setState(data);
+                this.setState(data)
             })
     }
 
@@ -36,4 +36,4 @@ class Read extends Component {
     }
 }
 
-export default Read;
+export default Read

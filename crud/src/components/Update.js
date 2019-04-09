@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Update extends Component {
 
@@ -22,7 +22,7 @@ class Update extends Component {
     // }
 
     handleChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
+        this.setState({ [event.target.name]: event.target.value })
     }
 
     handleSubmit = (event) => {
@@ -33,10 +33,10 @@ class Update extends Component {
         })
             .then(response => {
                 if (response.ok) {
-                    this.props.history.push(`/read/${id}`);
+                    this.props.history.push(`/read/${id}`)
                 }
             })
-        event.preventDefault();
+        event.preventDefault()
     }
 
     render() {
@@ -60,4 +60,4 @@ class Update extends Component {
     }
 }
 
-export default Update;
+export default Update

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React, { Component } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import Menu from './components/Menu'
 import List from './components/List'
@@ -18,7 +18,7 @@ class App extends Component {
         <Route exact path="/read/:id" component={Read} />
         <Route exact path="/update/:id" component={Update} />
       </BrowserRouter>
-    );
+    )
   }
 }
 

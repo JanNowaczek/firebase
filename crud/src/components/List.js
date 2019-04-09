@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 class List extends Component {
@@ -22,13 +22,13 @@ class List extends Component {
                     });
 
                 });
-                this.setState({ data: data });
+                this.setState({ data: data })
                 // this.setState({ data });
             })
     }
 
     componentDidMount() {
-        this.fetchData();
+        this.fetchData()
     }
 
     handleRemove = (id) => {
@@ -51,7 +51,7 @@ class List extends Component {
                     </div>
                 ))}
             </div>
-        );
+        )
     }
 }
 
