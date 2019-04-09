@@ -16,17 +16,26 @@ class List extends Component {
                         id: elem[0],
                         ...elem[1]
                     });
+
                 });
                 this.setState({ data: data });
                 // this.setState({ data });
             })
     }
 
+    handleRemove = (id) => {
+        fetch(`https://jfddl7-api-b832f.firebaseio.com/cats/${id}.json`, {
+            method: 'DELETE'
+        });
+    }
+
     render() {
         return (
             <div>
                 {this.state.data.map(elem => (
-                    <div key={elem.id}>{elem.name}</div>
+                    <div key={elem.id}>
+                        {elem.name} <button onClick={() => this.handleRemove(elem.id)}>Remove</button>
+                    </div>
                 ))}
             </div>
         );
