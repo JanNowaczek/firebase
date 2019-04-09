@@ -11,8 +11,8 @@ class Create extends Component {
     //    this.setState({ [fieldName]: event.target.value });
     //}
 
-    handleChange = (event) =>{
-        this.setState({ [event.target.name]: event.target.value})
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value })
     }
 
     handleSubmit = (event) => {
@@ -20,6 +20,12 @@ class Create extends Component {
             method: 'POST',
             body: JSON.stringyfy(this.state)
         })
+            .then(response => {
+                if (response.ok) {
+                    this.props.history.push('/')
+                }
+            })
+
         event.preventDefault()
     }
 
