@@ -12,6 +12,9 @@ class List extends Component {
             .then(response => response.json())
             .then(responseData => {
                 const data = [];
+                if (responseData === null) {
+                    return;
+                }
                 Object.entries(responseData).forEach(elem => {
                     data.push({
                         id: elem[0],
@@ -44,7 +47,7 @@ class List extends Component {
             <div>
                 {this.state.data.map(elem => (
                     <div key={elem.id}>
-                       <Link to={`/read/${elem.id}`}>{elem.name} <button onClick={() => this.handleRemove(elem.id)}>Remove</button></Link>
+                        <Link to={`/read/${elem.id}`}>{elem.name}</Link> <Link to={`/update/${elem.id}`}>Update</Link> <button onClick={() => this.handleRemove(elem.id)}>Remove</button>
                     </div>
                 ))}
             </div>
