@@ -28,6 +28,9 @@ class Read extends Component {
                 <div>
                     Role: {this.state.role || null}
                 </div>
+                <div>
+                    <img src={this.state.url} alt="" />
+                </div>
             </div>
         );
     }
