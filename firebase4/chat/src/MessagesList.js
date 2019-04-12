@@ -22,10 +22,17 @@ const MessagesList = (props) => {
         message => message.isFav && message.isFav[auth.currentUser.uid]
     )
 
+    const showedMessage = (
+        props.isFavFilterActive ?
+        filteredMessages
+        :
+        messagesArray
+    )
+
     return(
         <List>
             {
-                filteredMessages.map(
+                showedMessage.map(
                     message => (
                         <Message
                             key={message.key}

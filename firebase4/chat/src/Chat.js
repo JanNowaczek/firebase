@@ -12,6 +12,7 @@ class Chat extends React.Component {
         newMessageText: '',
         isSnackbarOpen: false,
         snackbarMessage: '',
+        isFavFilterActive: false,
     }
 
     componentDidMount() {
@@ -66,17 +67,25 @@ class Chat extends React.Component {
         }
     }
 
+    toggleFavFilterActive = () => this.setState({
+        isFavFilterActive: !this.state.isFavFilterActive,
+    })
+
     render() {
         return (
             <div>
                 <MessagesList
                     messages={this.state.messages}
                     toggleFavorite={this.toggleFavorite}
+                    isFavFilterActive={this.state.isFavFilterActive}
                 />
                 <NewMessageForm
                     newMessageText={this.state.newMessageText}
                     onNewMessageTextChanged={this.onNewMessageTextChanged}
                     onMessageSent={this.onMessageSent}
+
+                    isFavFilterActive={this.state.isFavFilterActive}
+                    toggleFavFilterActive={this.toggleFavFilterActive}
                 />
                 <Snackbar
                     autoHideDuration={2000}
