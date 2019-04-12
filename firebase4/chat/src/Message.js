@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { auth } from './firebaseConf'
+
 import ListItem from '@material-ui/core/ListItem'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
@@ -27,8 +29,15 @@ const Message = (props) => (
             />
             <ListItemSecondaryAction>
                 <IconButton>
-                    <StarBorderIcon />
-                    <StarIcon />
+                    {
+                        (
+                            props.message.isFav &&
+                            props.message.isFav[auth.currentUser.uid]
+                        ) ?
+                            <StarIcon />
+                            :
+                            <StarBorderIcon />
+                    }
                 </IconButton>
             </ListItemSecondaryAction>
         </ListItem>
