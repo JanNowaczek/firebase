@@ -1,9 +1,38 @@
 import React from 'react'
 
-const NewMessageForm = (props) => (
-    <div>
+import TextField from '@material-ui/core/TextField'
+import Paper from '@material-ui/core/Paper'
 
-    </div>
+const styles = {
+    paper: {
+        padding: 20,
+        position: 'fixed',
+        bottom: 0,
+        width: '100%',
+        boxSizing: 'border-box',
+    }
+}
+
+const NewMessageForm = (props) => (
+    <Paper
+        style={styles.paper}
+    >
+        <form
+            onSubmit={event => {
+                event.preventDefault(
+                )
+                props.onNewMessageSent()  
+            }}
+        >
+            <TextField
+                label={'Wpisz wiadomość...'}
+                fullWidth={true}
+                value={props.NewMessageText}
+                onChange={props.onNewMessageTextChanged}
+
+            />
+        </form>
+    </Paper>
 )
 
 export default NewMessageForm

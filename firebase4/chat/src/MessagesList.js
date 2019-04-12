@@ -2,6 +2,7 @@ import React from 'react'
 
 import List from '@material-ui/core/List'
 import Message from './Message'
+import { reverse } from 'dns';
 
 const MessagesList = (props) => {
     const messagesArray = (
@@ -12,6 +13,7 @@ const MessagesList = (props) => {
                     key,
                 })
             )
+            .reverse()
     )
 
     return(
