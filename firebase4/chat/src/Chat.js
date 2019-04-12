@@ -52,11 +52,26 @@ class Chat extends React.Component {
             )
     }
 
+    toggleFavorite = (message) => {
+        const clickedMessageId = message.key
+        const currentUserUid = auth.currentUser.uid
+        const isFav = message.isFav && message.isFav[currentUserUid]
+
+        const ref = database.ref(`JFDDL7/chat/${clickedMessageId}/isFav/${currentUserUid}`)
+
+        if(isFav) {
+            ref.remove()
+        }else{
+            ref.set(true)
+        }
+    }
+
     render() {
         return (
             <div>
                 <MessagesList
                     messages={this.state.messages}
+                    toggleFavorite={this.toggleFavorite}
                 />
                 <NewMessageForm
                     newMessageText={this.state.newMessageText}
