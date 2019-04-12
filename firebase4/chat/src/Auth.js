@@ -22,6 +22,18 @@ class Auth extends React.Component {
         isUserLoggedIn: false,
     }
 
+    componentDidMount(){
+        auth.onAuthStateChanged(
+            (user) => {
+                if (user) {
+                    this.setState({ isUserLoggedIn: true })
+                }else{
+                    this.setState({ isUserLoggedIn: false })
+                }
+            }
+        )
+    }
+
     onLogInByGoogleClick = () => {
         auth.signInWithPopup(googleProvider)
             .catch(console.log)
